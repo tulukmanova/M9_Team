@@ -51,8 +51,11 @@ def button_equal():
     else:
         e.insert(0, "Invalid!!!")
 
-# Document what the following lines of code do here
-#
+
+#Create buttons for digits 0-9 using the Button widget
+#Use lambda functions to associate each button with the button_click() function, passing the corresponding digit as an argument.
+#Create additional buttons for operators (+, -, *, /) using lambda to call button_operator() with the respective operator.
+
 # NOTE: We did not cover Lambda functins in class. A Lambda Function 
 # in Python programming is an anonymous function
 # or a function having no name. It is a small and restricted function 
@@ -72,18 +75,21 @@ button_8 =  Button(root, text="8", padx=40, pady=20, command=lambda: button_clic
 button_9 =  Button(root, text="9", padx=40, pady=20, command=lambda: button_click(9))
 button_0 =  Button(root, text="0", padx=40, pady=20, command=lambda: button_click(0))
 button_add =  Button(root, text="+", padx=39, pady=20, command=lambda: button_operator("+"))
+#Add special buttons:
+#= calls button_equal() to calculate the result.
+#Clear calls button_clear() to reset the input.
 button_equal =  Button(root, text="   =   ", padx=79, pady=20, command=button_equal)
 button_clear =  Button(root, text="Clear", padx=79, pady=20, command=button_clear)
 
-# Document what the following lines of code do here
-
-# See the description of a Lambda function above
+#Arrange the buttons on the GUI in a grid:
+#Place digit buttons (1-9) in rows 1-3 and button 0 in row 4.
+#Arrange operator buttons (+, -, *, /) in rows 5-6.
+#Place the = button and Clear button with specific columnspan for alignment.
 button_subtract =  Button(root, text="-", padx=40, pady=20, command=lambda: button_operator("-"))
 button_multiply =  Button(root, text="*", padx=40, pady=20, command=lambda: button_operator("*"))
 button_divide =  Button(root, text="/", padx=40, pady=20, command=lambda: button_operator("/"))
 
-# Document what the following lines of code do here
-
+# Start the GUI event loop with root.mainloop():
 button_1.grid(row=3, column=0)
 button_2.grid(row=3, column=1)
 button_3.grid(row=3, column=2)
@@ -106,5 +112,5 @@ button_multiply.grid(row=6, column=1)
 button_divide.grid(row=6, column=2)
 
 # Document what the following line of code do here
-
+#Keeps the window open and responsive to user interaction.
 root.mainloop()
