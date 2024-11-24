@@ -1,30 +1,45 @@
 # Program description goes here
-# Updated on:
-# Updated by:
+#this is a simple calculater program that can perform basic arithmetic operatipons like addition, subtraction, multiplication and division
+# Updated on: 11-24-2024
+# Updated by: khateeja khatoon, takhmina 
 #
-#
+# 
 # Document what the following lines of code do here
+# importing the tkinter module for creating the GUI
 from tkinter import *
-
+# creating the root window
 root = Tk()
-
+# setting the tittle of the window
 root.title("Simple Calculator")
 
 # Document what the following lines of code do here
+#creating an entry widget for displaying the input and output
+#the entry idget is created with a width of 35, borderwidth of 5
+# and is placed in row 0, column span3, padx 10,pady 10
 e = Entry(root, width=35, borderwidth=5)
 e.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
 
 # Document what the following lines of code do here
+#the funtion takes a number as an argument 
+# the current content of the entry widget is retrieved
+#the current content is deleted and the new number is inserted
 def button_click(number):
     current = e.get()
     e.delete(0, END)
     e.insert(0, str(current) + str(number))
 
 # Document what the following lines of code do here
+#defining the function for button clear events
+#the function deletes the content of the entry widget
 def button_clear():
     e.delete(0, END)
 
 # Document what the following lines of code do here
+# defining the function for button operator events 
+#the function retrieves the first number from the entry widget
+#the first number is stored in a global variable f_num
+#the operator is stored in a global variable num_operator
+# the entry widget is cleared
 def button_operator(operator):
     first_number = e.get()
     global f_num
@@ -34,6 +49,10 @@ def button_operator(operator):
     e.delete(0, END)
 
 # Document what the following lines of code do here
+# defining the function for button equal events 
+#the funtion retrieves the second number from the entry widget
+# the second number is used to perform the arithmetic operation
+# the result is inserted into entry widget 
 
 # you might want to consider adding documentation on a line by line basis since
 # this is a critical function for the program
